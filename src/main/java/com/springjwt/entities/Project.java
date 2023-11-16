@@ -6,6 +6,7 @@ import lombok.*;
 import jakarta.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 @Getter
 @Setter
@@ -24,7 +25,7 @@ public class Project   implements Serializable  {
 @JsonIgnore
 
     @ManyToMany(mappedBy="projectset", cascade = CascadeType.DETACH)
-    private Set<User> users;
+    private Set<User> users ;
     @JsonIgnore
     @OneToMany(mappedBy = "projects", cascade = CascadeType.DETACH)
     private Set<Tasks> tasks;

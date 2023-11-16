@@ -11,7 +11,7 @@ public interface IProjectService {
 
     public Project addproject(Project P);
     //public ProjectDTO addprojectt(ProjectDTO P);
-    public void removeProjet(Long projectId);
+    public Project removeProjet(Long projectId);
     public Project modifyProjet(Project projet);
     public List<Project> retrieveAllProjet();
 

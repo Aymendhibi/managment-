@@ -30,7 +30,7 @@ public class WebSecurityConfiguration {
                 .requestMatchers("/authenticate", "/sign-up","/soumettre","/project/soumettre","/project/liste","/project/sum/projet","/project/countconge","/project/count/reclamation","/project/count/team","/project/consulter/**"
                         ,"/project/send","/project/reclamation","/project/reclamation/**","/project/traiter/**","project/Tasks/create/**","project/Tasks/TaskUser","project/Tasks/**","project/Tasks","/Tasks/TaskUser","project/**","project/allProjet","project/deletProjet",
                         "project/add","project/Tasks/export/monthly/supervisor/{createdDate}","project/Tasks/export/monthly/{createdDate}","/my-profile","project/affecterprojetAuuser/**","/project/affecterprojetAuuser/**",
-                        "/project/my-tasks","/my-profile","project/Taskss/**","/project/**").permitAll()
+                        "/project/my-tasks","/my-profile","project/Taskss/**","/project/**","/project/projects","/project/users").permitAll()
                 .requestMatchers("/authenticate").permitAll()
                 .requestMatchers("/my-profile").authenticated()
                // .requestMatchers("/project/my-tasks").authenticated()

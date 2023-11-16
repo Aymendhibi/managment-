@@ -18,15 +18,19 @@ public class AuthServiceImpl implements AuthService {
     public UserDTO createUser(SignupDTO signupDTO) {
         User user = new User();
         user.setName(signupDTO.getName());
+        user.setUsername(signupDTO.getUsername());
         user.setEmail(signupDTO.getEmail());
-        user.setRole(signupDTO.getRole());
+        user.setTeam(signupDTO.getTeam());
+user.setRole(signupDTO.getRole());
         user.setPassword(new BCryptPasswordEncoder().encode(signupDTO.getPassword()));
         User createdUser = userRepository.save(user);
         UserDTO userDTO = new UserDTO();
         userDTO.setId(createdUser.getId());
         userDTO.setEmail(createdUser.getEmail());
         userDTO.setName(createdUser.getName());
-        userDTO.setRole(createdUser.getRole());
+        userDTO.setUsername(createdUser.getUsername());
+        userDTO.setTeam(createdUser.getTeam());
+userDTO.setRole(createdUser.getRole());
         return userDTO;
     }
 }

@@ -27,6 +27,8 @@ import java.util.List;
 public class ProjectController {
     @Autowired
     IProjectService iProjectService;
+    @Autowired
+    ProjectService projectService;
 @Autowired
 ITasksService iTasksService;
 
@@ -254,7 +256,15 @@ ICongeService iCongeService;
     }
 
 
+    @GetMapping("/projects")
+    public List<Project> getProjects() {
+        return projectService.getAllProjects();
+    }
 
+    @GetMapping("/users")
+    public List<User> getUsers() {
+        return projectService.getAlluser();
+    }
 
 
 

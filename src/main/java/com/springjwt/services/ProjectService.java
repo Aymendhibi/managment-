@@ -55,9 +55,10 @@ public class ProjectService implements IProjectService{
 */
 
   @Override
-  public void removeProjet(Long projectId) {
+  public Project removeProjet(Long projectId) {
     projectRepository.deleteById(projectId);
 
+    return null;
   }
 
   @Override
@@ -142,6 +143,11 @@ public class ProjectService implements IProjectService{
             .flatMap(project -> project.getTasks().stream())
             .collect(Collectors.toList());
   }
-
+  public List<Project> getAllProjects() {
+    return projectRepository.findAll();
+  }
+  public List<User> getAlluser() {
+    return userRepository.findAll();
+  }
 
 }
